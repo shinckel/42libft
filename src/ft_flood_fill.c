@@ -1,21 +1,27 @@
-// #include <stdlib.h>
-// #include <stdio.h>
-  
-typedef struct  s_point
-{
-int           x;
-int           y;
-}               t_point;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_flood_fill.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shinckel <shinckel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/10 17:34:58 by shinckel          #+#    #+#             */
+/*   Updated: 2024/06/10 17:41:04 by shinckel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    fill(char **tab, t_point size, t_point cur, char to_fill)
+#include "libft.h"
+
+void	fill(char **tab, t_point size, t_point cur, char to_fill)
 {
-    if (cur.x < 0 || cur.x >= size.x || cur.y < 0 || cur.y >= size.y || tab[cur.y][cur.x] != to_fill)
-        return ;
-    tab[cur.y][cur.x] = 'F';
-    fill(tab, size, (t_point){cur.x - 1, cur.y}, to_fill);
-    fill(tab, size, (t_point){cur.x + 1, cur.y}, to_fill);
-    fill(tab, size, (t_point){cur.x, cur.y - 1}, to_fill);
-    fill(tab, size, (t_point){cur.x, cur.y + 1}, to_fill);
+	if (cur.x < 0 || cur.x >= size.x || cur.y < 0 || cur.y >= size.y \
+		|| tab[cur.y][cur.x] != to_fill)
+		return ;
+	tab[cur.y][cur.x] = 'F';
+	fill(tab, size, (t_point){cur.x - 1, cur.y}, to_fill);
+	fill(tab, size, (t_point){cur.x + 1, cur.y}, to_fill);
+	fill(tab, size, (t_point){cur.x, cur.y - 1}, to_fill);
+	fill(tab, size, (t_point){cur.x, cur.y + 1}, to_fill);
 }
 
 void	flood_fill(char **tab, t_point size, t_point begin)
@@ -63,8 +69,8 @@ void	flood_fill(char **tab, t_point size, t_point begin)
 // }
 
 // Change pixel/value output
-// any pixel connected 4 directionally to the pixel at (x, y) that also has a value of old_color, to the color new_color.
+// any pixel connected 4 directionally to the pixel at (x, y) that also has...
+// ...a value of old_color, to the color new_color.
 // up - left - right - down
 // remember: 2d array is array of pointers to arrays...
 // Therefore, in order to access it the coordinate order is [y][x]
-

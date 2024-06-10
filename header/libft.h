@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shinckel <shinckel@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: shinckel <shinckel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:03:33 by shinckel          #+#    #+#             */
-/*   Updated: 2023/09/26 16:39:04 by shinckel         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:41:26 by shinckel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+typedef struct s_point
+{
+	int			x;
+	int			y;
+}				t_point;
 
 /* <ctype.h> checks for an alphabetic character*/
 int			ft_isalpha(int c);
