@@ -6,7 +6,7 @@
 /*   By: shinckel <shinckel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:15:03 by shinckel          #+#    #+#             */
-/*   Updated: 2024/06/10 17:29:00 by shinckel         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:23:34 by shinckel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	tmp = lst;
 	while (lst->next != NULL)
 	{
-		if ((*cmp)(lst->content, lst->next->content) == 0)
+		if ((*cmp)(lst->number, lst->next->number) == 0)
 		{
-			swap = lst->content;
-			lst->content = lst->next->content;
-			lst->next->content = swap;
+			swap = lst->number;
+			lst->number = lst->next->number;
+			lst->next->number = swap;
 			lst = tmp;
 		}
 		else
@@ -43,21 +43,21 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 }
 
 //create node linked list
-t_list	*ft_create_elem(int content)
+t_list	*ft_create_elem(int number)
 {
 	t_list	*new;
 
 	new = (t_list *)malloc(sizeof(t_list));
 	if (new)
 	{
-		new->content = content;
+		new->number = number;
 		new->next = NULL;
 	}
 	return (new);
 }
 
 //add node linked list
-void	ft_list_push_back(t_list **begin_list, int content)
+void	ft_list_push_back(t_list **begin_list, int number)
 {
 	t_list	*tmp;
 
@@ -66,10 +66,10 @@ void	ft_list_push_back(t_list **begin_list, int content)
 	{
 		while (tmp->next)
 			tmp = tmp->next;
-		tmp->next = ft_create_elem(content);
+		tmp->next = ft_create_elem(number);
 	}
 	else
-		*begin_list = ft_create_elem(content);
+		*begin_list = ft_create_elem(number);
 }
 
 int	main(void)
@@ -88,7 +88,7 @@ int	main(void)
 	sort_list(list, ascending);
 	while (list)
 	{
-		printf("%d\n", list->content);
+		printf("%d\n", list->number);
 		list = list->next;
 	}
 	return (0);

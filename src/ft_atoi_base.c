@@ -6,13 +6,13 @@
 /*   By: shinckel <shinckel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:30:22 by shinckel          #+#    #+#             */
-/*   Updated: 2024/06/10 17:34:21 by shinckel         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:13:45 by shinckel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_tolower(char c)
+char	ft_char_tolower(char c)
 {
 	if (c <= 'Z' && c >= 'A')
 		c += 32;
@@ -49,9 +49,9 @@ int	ft_atoi_base(const char *str, int str_base)
 		sign = -1;
 		i++;
 	}
-	while (digit(ft_tolower(str[i]), str_base) >= 0)
+	while (digit(ft_char_tolower(str[i]), str_base) >= 0)
 	{
-		res = res * str_base + digit(ft_tolower(str[i]), str_base);
+		res = res * str_base + digit(ft_char_tolower(str[i]), str_base);
 		i++;
 	}
 	return (res * sign);

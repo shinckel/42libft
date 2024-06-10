@@ -6,13 +6,13 @@
 /*   By: shinckel <shinckel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:42:04 by shinckel          #+#    #+#             */
-/*   Updated: 2024/06/10 18:59:23 by shinckel         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:25:12 by shinckel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strlen(char *str)
+static int	ft_static_strlen(char *str)
 {
 	int	i; 
 
@@ -22,13 +22,15 @@ static int	ft_strlen(char *str)
 	return (i);
 }
 
-static char	*ft_strcpy(char *dest, char *src)
+static char	*ft_static_strcpy(char *dest, char *src) __attribute__((unused));
+
+static char	*ft_static_strcpy(char *dest, char *src)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	j = ft_strlen(dest);
+	j = ft_static_strlen(dest);
 	while (src[i])
 	{
 		dest[j] = src[i];
@@ -45,7 +47,7 @@ static char	*ft_strcpy(char *dest, char *src)
 // 	int j = 0;
 // 	int k = 0;
 // 	int tab[255] = {0};
-// 	char *str = ft_strcpy(argv[1], argv[2]);
+// 	char *str = ft_static_strcpy(argv[1], argv[2]);
 
 // 	if (argc == 3)
 // 	{

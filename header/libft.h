@@ -6,7 +6,7 @@
 /*   By: shinckel <shinckel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:03:33 by shinckel          #+#    #+#             */
-/*   Updated: 2024/06/10 17:41:26 by shinckel         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:22:50 by shinckel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void		ft_putnbr_fd(int n, int fd);
 typedef struct s_list
 {
 	void			*content;
+	int				number;
 	struct s_list	*next;
 }	t_list;
 
